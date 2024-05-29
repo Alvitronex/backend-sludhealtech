@@ -31,9 +31,8 @@ class AuthController extends Controller
             ]);
         }
         return $user->createToken($request->device_name)->plainTextToken;
-
     }
-   
+
     public function mostrar_usuario()
     {
         $usuarios = User::all();
@@ -41,7 +40,7 @@ class AuthController extends Controller
     }
     public function crear(Request $request)
     {
-        $request ->validate([
+        $request->validate([
             'name' => 'required',
             'email' => 'required|unique:users,email',
             'password' => 'required'
@@ -52,8 +51,23 @@ class AuthController extends Controller
         $usuario->password = bcrypt($request->password);
         $usuario->save();
 
-        $mensaje = "usuario creado exitosamente!!"; 
+        $mensaje = "usuario creado exitosamente!!";
         return json_encode($mensaje);
     }
-
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string|min:8',
+        ]);
+        $user = User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => Hash::make($request->input('password')),
+        ]);
+        // $mensaje = "usuario creado exitosamente!!";
+        // return json_encode($mensaje);
+        return $user->createToken('Authtoken')->plainTextToken;
+    }
 }
