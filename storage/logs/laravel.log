@@ -1651,3 +1651,29 @@ Did you mean one of these?
 #31 /Users/Alvitronex/Desktop/Slud Healtech/backend/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('/Users/Alvitron...')
 #32 {main}
 "} 
+[2024-06-01 15:12:25] local.ERROR: Command "config:ache" is not defined.
+
+Did you mean one of these?
+    config:cache
+    config:clear
+    config:show
+    event:cache
+    route:cache
+    schedule:clear-cache
+    view:cache {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"config:ache\" is not defined.
+
+Did you mean one of these?
+    config:cache
+    config:clear
+    config:show
+    event:cache
+    route:cache
+    schedule:clear-cache
+    view:cache at /Users/Alvitronex/Desktop/Slud Healtech/backend/vendor/symfony/console/Application.php:737)
+[stacktrace]
+#0 /Users/Alvitronex/Desktop/Slud Healtech/backend/vendor/symfony/console/Application.php(266): Symfony\\Component\\Console\\Application->find('config:ache')
+#1 /Users/Alvitronex/Desktop/Slud Healtech/backend/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /Users/Alvitronex/Desktop/Slud Healtech/backend/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /Users/Alvitronex/Desktop/Slud Healtech/backend/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 {main}
+"} 
